@@ -1,0 +1,44 @@
+footer {
+	width: 100%;
+    background-color: black;
+    height: 100px;
+    @include midflex;
+    .content-wrap{
+        position:relative;
+        display: flex;
+        justify-content: space-between;
+        .copyright, a{
+            color: #b7b7b7;
+            font-family: ProximaRegular;
+            font-size:0.8rem;
+            white-space: nowrap;
+        }
+        .logo{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            img{
+                width: 144px;
+                height: 17px;
+            }
+            a{
+                text-align: right;
+            }
+        }
+    }
+	@include desktop {
+		
+	}
+	@include tablet {
+		
+	}
+	@include mobile {
+		
+	}
+	@include mobile-xxs {
+		
+	}
+}

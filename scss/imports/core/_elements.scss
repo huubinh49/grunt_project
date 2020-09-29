@@ -1,0 +1,158 @@
+a {
+    color: $text-cl;
+    text-decoration: none;
+    display: block;
+}
+img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+strong {
+    font-family: bb;
+}
+
+.-lv1 {
+    @include text(100px, b, 100px, $white-cl, none);
+    font-weight: normal;
+    margin: 0;
+    a {
+        @include text(100px, g, 100px, $white-cl, none);
+    }
+    @include tablet {
+    }
+    @include mobile {
+    }
+}
+
+
+.learn_more{
+    transition: 0.3s;
+    &:hover{
+        p, img{
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+    }
+}
+.pointer_element{
+    pointer-events: none;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border: 1px solid $gold-cl;
+    z-index: 10;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    &::before{
+        content: "";
+        @include mid;
+
+        width: 50px;
+        height: 50px;
+        border: 1px solid $gold-cl;
+        z-index: 10;
+        border-radius: 50%;
+
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: 0.2s;
+    }
+    &.hovering{
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        &::before{
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    }   
+}
+
+.card{
+    margin: 0 30px;
+    .card__top{
+        position: relative;
+        margin: 0 0 30px 0; 
+        .card__img{
+            position: relative;
+            border-radius: 999px;
+    
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            top:50%;
+            left: 50%;
+    
+            transform: translate(-50%, -50%);
+            border: 1px solid #7c7c7c;
+            border-radius: 999px;
+            width: 160px;
+            height: 160px;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            top:50%;
+            left: 50%;
+            
+            transform: translate(-50%, -50%);
+            border: 1px solid #7c7c7c;
+            border-radius: 999px;
+            width: 160px;
+            height: 160px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .card__play{
+            border-radius: 999px;
+            z-index: 1;
+
+            @include fullpage;
+            @include midflex;
+
+            background-color: #00000079;
+    
+            img{
+                width: 48px;
+                height: 48px;
+            }
+        }
+    }
+    .card__bottom{
+        text-align: center;
+        p{
+            @include text(1rem, ProximaRegular, 1rem, black, unset);
+        }
+    }
+    &:hover{
+        
+        .card__top{
+            &::after{
+                transition: 0.3s;
+                transform:translate(-50%, -50%) scale(1.1);
+                opacity: 1;
+            }
+            &::before{
+                transition: 0.3s;
+                transform:translate(-50%, -50%) scale(1.2);
+            }
+            .card__img{
+                img{
+                    transform: scale(1.2);
+                    transition: 0.3s;            
+                }
+            }
+            .card__play{
+                img{
+                    transform: scale(0.8);
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}  

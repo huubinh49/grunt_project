@@ -1,0 +1,17 @@
+
+@keyframes arrow__button{
+    100%{
+        transform: translateX(10px);
+        opacity: 0.5;
+    }
+}
+@keyframes arrow__scroll{
+    0%{
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}

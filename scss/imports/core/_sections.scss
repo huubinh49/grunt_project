@@ -1,0 +1,324 @@
+
+
+section.product, .potential, .product__quality{
+    padding: 50px 0;   
+    display: flex;
+    justify-content: center;
+}
+  
+.content-wrap .content__info{
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+   h2{
+       @include text(40px, ProximaBold, 40px, $gold-cl, unset);
+       margin: 0 0 10px 0;
+   }
+   > p{
+       @include text(0.8rem, ProximaRegular, 1, white, unset);
+       margin: 0 0 30px 0;
+   }
+   a{
+       color: white;
+       width: fit-content;
+       height: 50px;
+       display: flex;
+       border:1px solid white;
+       padding: 15px 45px;
+       position: relative;
+
+       img{
+           width: 20px;
+           height: 20px;
+           
+           margin: 0 15px 0 0;
+       }
+       p{
+           white-space: nowrap;
+       }
+       &::before{
+           content: "";
+           position: absolute;
+           top: 0;
+           left: 0;
+           height: 100%;
+           width:50%;
+           transition: 0.3s;
+           z-index: -1;
+       }
+       &::after{
+           content: "";
+           position: absolute;
+           top: 0;
+           right: 0;
+           height: 100%;
+           width:50%;
+           transition: 0.3s;
+           z-index: -1;
+       }
+       transition: 0.3s;
+       &:hover{
+           transition: 0.3s;
+           border: 1px solid rgba(255, 255, 255, 0);
+           &::before{
+               top: calc(-50% + 1rem);
+               transform: skew(45deg) translateX(10%);
+               background-color: rgba(248, 248, 248, 0.493);
+               opacity: 0.8;
+               transition: 0.3s;
+           }
+           &::after{
+               top: calc(50% - 1rem);
+               transform: skew(45deg) translateX(-10%);
+               background-color: $gold-cl;
+               opacity: 0.9;
+               transition: 0.3s;
+           }
+           img{
+               transform: scale(1.2);
+           }
+       }
+   }
+
+   &-description{
+       @include text(1rem, ProximaRegular, 1rem, white, unset);
+       font-family: ProximaRegular;
+       color: #ffffff;
+       font-size: 0.8rem;
+       margin: 45px 0 55px 0;
+   }
+   @include mobile{
+       width: 100%;
+       align-items: center;
+       text-align: center;
+   }
+}
+
+
+ 
+
+.potential{
+    display: flex;
+    flex-flow: row-reverse; 
+    .potential__info{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 20px 0 0;
+            h2{
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+
+                @include text(2rem, ProximaExtra, 2rem, black, uppercase);
+                letter-spacing: 0.2rem;
+                margin: 0 0 25px 0;
+                gap: 10px;
+                &::before{
+                    display: block;
+                    content: "";
+                    width: 60px;
+                    height:1px;
+                    background-color: black;
+                }
+            }
+            &-wrap{
+                display: flex;
+                flex-flow: column;
+                
+                padding: 0 0 0 70px;
+            }
+            
+            &-description{
+                @include text(1rem, ProximaRegular, 1.2rem, #7c7c7c, unset);
+                font-size:1rem;
+                font-family: ProximaRegular;
+                color: #7c7c7c;
+                margin: 0 0 30px 0;
+                word-wrap: none;
+            }
+            a{
+                width: fit-content;
+                position: relative;
+                display: flex;
+                align-items: center;
+                color: black;
+                font-weight: 800;
+                &::after{
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    content:"";
+                    width: 40px;
+                    height:2px;
+                    background-color: $gold-cl;
+                    
+                }
+                p{
+                    @include text(0.8rem, ProximaBold, 0.8rem, black, unset);
+                    white-space: nowrap;
+                }
+                img{
+                    margin: 0 0 0 20px;
+                    width: 32px;
+                    height: 7px;
+                }
+            }
+    }
+    &:nth-child(2n){
+        flex-flow: wrap;
+        .potential__info{
+            padding: 0 0 0 20px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: flex-end;
+            h2{
+                flex-flow: row-reverse;
+                &::before{
+                    // margin: 0 0 0 20px;
+                }
+            }
+           
+            &-wrap{
+                text-align: right;
+                padding: 0 70px 0 0;
+                
+                align-items: flex-end;
+            }
+        }
+    }
+}
+
+.about, .gallery, .news{
+    @include midflex;
+ }
+
+.professional{
+    position: relative;
+    width: 100%;
+    &__img{
+        
+        
+        
+        img{
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+    }
+    .content-wrap{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.gallery{
+    background-color: black;
+    padding: 90px 0;
+    
+    .gallery__grid{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        .grid__item-img {
+            cursor: pointer;
+           
+            img{
+                filter:brightness(0.6);
+                transition:0.3s;
+            }
+            &:hover{
+                img{
+                    filter:brightness(1);
+                    transition:0.3s;
+                }
+            }
+        }
+        .grid__item-img:nth-child(1){
+            grid-area: 1/1/2/2;
+        }
+        .grid__item-img:nth-child(2){
+            grid-area: 2/1/3/2;
+        }
+        .grid__item-img:nth-child(3){
+            grid-area: 1/2/3/3;
+        }
+    }
+}
+   
+
+
+.news{
+    padding: 80px 0 100px 0;
+    .content-wrap{
+        h3{
+            color: black;
+            font-family: ProximaBold;
+        }
+        p{
+            color: black;
+            font-family: ProximaRegular;
+        }
+        .content__info{
+            h2{
+                color: black;
+                font-family: ProximaBold;
+            }
+        }
+        .news__grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            .grid__item{
+                
+                width: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                &-top{
+                    cursor: pointer;
+                    position: relative;
+                    margin: 0 0 40px 0;
+                    img{
+                        min-width: 100%;
+                        min-height: 100%;
+                        max-width: 300px;
+                        object-fit: cover;
+                    }
+                    &:hover{
+                        img{
+                            transform: scale(1.1);
+                        }
+                    }
+                    &::before{
+                        position: absolute;
+                        left: 0;
+                        bottom: -20px;
+                        content: "";
+                        width: 90px;
+                        height: 3px;
+                        background-color: $gold-cl;
+                    }
+                }
+                &-bottom{
+                    flex:auto;
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: space-between;
+                }
+            }
+        }
+        @include mobile{
+            .news__grid{
+                grid-template-columns: none;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+        }
+    }
+
+}

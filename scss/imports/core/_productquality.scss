@@ -1,0 +1,44 @@
+.product .product__quality{
+    display: flex;
+    flex-flow: column;
+    align-items: center ;
+    &-title{
+        text-align: center;
+
+        @include text(2rem, ProximaBold, 2rem, black, unset);
+        letter-spacing: 0.2rem;
+        position: relative;
+        &::after{
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform:translateX(-50%);
+    
+            content: "";
+            width: 30px;
+            height: 3px;
+            background-color:$gold-cl;
+        }
+    }
+    &-description{
+        width: 50%;
+        text-align: center;
+        margin: 50px 0;
+
+        @include text(1rem, ProximaRegular, 1rem, $gray-cl, unset);
+    }
+    &-work{
+        display: flex;
+        flex-flow: row nowrap;
+
+    }
+    @include mobile{
+        &-description{
+            width: 100%;
+        }
+        &-work{
+            gap: 40px;
+            flex-flow: column nowrap;
+        }
+    }
+}
