@@ -1,4 +1,4 @@
-# Web development template
+## Web development template
 This template can be used to develop all static website (pure HTML, CSS, JS approach) 
 
 Using grunt as a task runner and its ecosystem, we can automatically perform frequent tasks such as minification, compilation, unit testing, and linting.
@@ -18,12 +18,13 @@ The structure of this project:
     - pages/*.scss: Each file contains style sheet of each page of our website
 
 All .html file are created when we develop would be putted in the same directory like index.html
+
+## Availables tasks are configed in grunt.js:
+
 All config in grunt.js shouldn't be modified if you are not familar with grunt. 
 
 Usage
 ```grunt [options] [task [task ...]]```
-
-Availables tasks are configed in grunt.js:
 
 #### Hot reload, automatically maps .scss to .css files, uglify .js files:
 ```grunt watch```
