@@ -1,9 +1,9 @@
 ## Web development template
-This template can be used to develop all static website (pure HTML, CSS, JS approach) 
+This template can be used to develop all static websites (with pure HTML, CSS, JS approach) 
 
-Using grunt as a task runner and its ecosystem, we can automatically perform frequent tasks such as minification, compilation, unit testing, and linting.
+By using grunt as a task runner and its ecosystem, we can automatically perform frequent tasks such as minification, compilation, unit testing, and linting.
 
-When using this template, all thing you need to do is put files into correctly directory and run the below command for automatically boring tasks.
+When using this template, all thing you need to do is put files into correctly directory and run the below commands for automatically boring tasks.
 
 The structure of this project:
 - dest: where .css files which is compiled from scss files in scss folder
